@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer {
+  html {
+    @apply scroll-smooth
+  }
+
+  body {
+    @apply font-[Montserrat]
+  }
+
+
+}
+
+.shadow-blur-dark {
+  filter: drop-shadow(0px 54px 55px #e735ea27) drop-shadow(0px -12px 30px #e735ea49) drop-shadow(0px 4px 6px #e735ea67) drop-shadow(0px 12px 13px #e735ea6e) drop-shadow(0px -3px 5px rgba(230, 53, 234, 0.09));
+}
+
+.dark .group:hover,
+.dark .add-board-btn:hover {
+  filter: drop-shadow(0px 54px 55px #e735ea27) drop-shadow(0px -12px 30px #e735ea49) drop-shadow(0px 4px 6px #e735ea67) drop-shadow(0px 12px 13px #e735ea6e) drop-shadow(0px -3px 5px rgba(230, 53, 234, 0.09));
+}
+
+.delete-box {
+  animation: appearDeleteBox .5s ease forwards;
+}
+
+.group {
+  transform: rotate(0);
+}
+
+.dragging {
+  transform: rotate(15deg);
+}
+
+.dark-mode-switch {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  background-color: #000;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode-switch:before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 21px;
+  height: 21px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.dark-mode-switch.active {
+  background-color: #d9d9d9;
+}
+
+.dark-mode-switch.active:before {
+  content: "";
+  background-color: #000;
+  transform: translateX(25px);
+}
+
+.accordion-content {
+  -webkit-transition: max-height 1s;
+  -moz-transition: max-height 1s;
+  -ms-transition: max-height 1s;
+  -o-transition: max-height 1s;
+  transition: max-height 1s;
+  overflow: hidden;
+  max-height: 0;
+}
+
+@keyframes appearDeleteBox {
+  from {
+    top: 0%;
+  }
+
+  to {
+    top: 30%;
+  }
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ffffff75;
+  border-radius: 100rem;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #18191a;
+  border-radius: 100rem;
+}
+
+.column-drop-preview {
+  background-color: rgba(150, 150, 200, 0.1);
+  border: 1px dashed #abc;
+  margin: 5px 45px 5px 5px;
+}
+
+.card-ghost {
+  transition: transform 0.18s ease;
+  transform: rotateZ(5deg);
+}
+
+.card-ghost-drop {
+  transition: transform 0.18s ease-in-out;
+  transform: rotateZ(0deg);
+}
+
+.card-drop-preview {
+  background-color: rgba(150, 150, 200, 0.1);
+  border: 1px dashed #abc;
+  margin: 5px;
+}
+
+.card-features {
+  display: none;
+}
+
+.card-box:hover .card-features {
+  display: flex;
+  opacity: 1;
+}
+
+[contenteditable] {
+  outline: 0px solid transparent;
+}
+
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
